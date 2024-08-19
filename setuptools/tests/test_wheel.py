@@ -86,7 +86,7 @@ def test_wheel_info(filename, info):
             Wheel(filename)
         return
     w = Wheel(filename)
-    assert {k: getattr(w, k) for k in info.keys()} == info
+    assert {k: getattr(w, k) for k in info} == info
 
 
 @contextlib.contextmanager

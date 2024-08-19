@@ -17,6 +17,7 @@ extend-select = [
 	"I", # isort
 	"PYI", # flake8-pyi
 	"SIM109", # flake8-simplify
+	"SIM118", # flake8-simplify
 	"UP", # pyupgrade
 	"TRY",
 	"YTT", # flake8-2020

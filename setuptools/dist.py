@@ -345,7 +345,7 @@ class Distribution(_Distribution):
         self.metadata.extras_require = self.extras_require
 
         if self.extras_require:
-            for extra in self.extras_require.keys():
+            for extra in self.extras_require:
                 # Setuptools allows a weird "<name>:<env markers> syntax for extras
                 extra = extra.split(':')[0]
                 if extra:

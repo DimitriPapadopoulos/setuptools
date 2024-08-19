@@ -1294,7 +1294,7 @@ class Environment:
 
     def __iter__(self) -> Iterator[str]:
         """Yield the unique project names of the available distributions"""
-        for key in self._distmap.keys():
+        for key in self._distmap:
             if self[key]:
                 yield key
 
