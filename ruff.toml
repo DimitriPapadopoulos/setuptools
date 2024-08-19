@@ -16,6 +16,7 @@ extend-select = [
 	"F404", # late-future-import
 	"I", # isort
 	"PYI", # flake8-pyi
+	"SIM109", # flake8-simplify
 	"UP", # pyupgrade
 	"TRY",
 	"YTT", # flake8-2020

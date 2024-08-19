@@ -156,7 +156,7 @@ if not sys.platform.startswith('java') and sys.platform != 'cli':
 
             if op == LOAD_CONST:
                 const = code.co_consts[arg]
-            elif arg == name_idx and (op == STORE_NAME or op == STORE_GLOBAL):
+            elif arg == name_idx and op in (STORE_NAME, STORE_GLOBAL):
                 return const
             else:
                 const = default
