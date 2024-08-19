@@ -14,6 +14,7 @@ extend-select = [
 	"ANN2", # missing-return-type-*
 	"FA", # flake8-future-annotations
 	"F404", # late-future-import
+	"FLY", # flynt
 	"I", # isort
 	"PYI", # flake8-pyi
 	"SIM109", # flake8-simplify

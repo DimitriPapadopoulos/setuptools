@@ -156,7 +156,7 @@ class TestPackageIndex:
             ('+ubuntu_0', '+ubuntu.0'),
         ]
         versions = [
-            [''.join([e, r, p, loc]) for loc in locs]
+            [f'{e}{r}{p}{loc}' for loc in locs]
             for e in epoch
             for r in releases
             for p in sum([pre, post, dev], [''])
