@@ -1056,7 +1056,7 @@ class easy_install(Command):
                     parts = src.split('/')
                     dst = os.path.join(egg_tmp, *parts)
                     dl = dst.lower()
-                    if dl.endswith('.pyd') or dl.endswith('.dll'):
+                    if dl.endswith(('.pyd', '.dll')):
                         parts[-1] = bdist_egg.strip_module(parts[-1])
                         top_level.add([os.path.splitext(parts[0])[0]])
                         native_libs.append(src)
@@ -1296,7 +1296,7 @@ class easy_install(Command):
         def pf(src, dst):
             if dst.endswith('.py') and not src.startswith('EGG-INFO/'):
                 to_compile.append(dst)
-            elif dst.endswith('.dll') or dst.endswith('.so'):
+            elif dst.endswith(('.dll', '.so')):
                 to_chmod.append(dst)
             self.unpack_progress(src, dst)
             return not self.dry_run and dst or None
@@ -2006,7 +2006,7 @@ def nt_quote_arg(arg):
 
 def is_python_script(script_text, filename):
     """Is this text, as a whole, a Python script? (as opposed to shell/bat/etc."""
-    if filename.endswith('.py') or filename.endswith('.pyw'):
+    if filename.endswith(('.py', '.pyw')):
         return True  # extension says it's Python
     if is_python(script_text, filename):
         return True  # it's syntactically valid Python
