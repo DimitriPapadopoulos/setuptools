@@ -903,7 +903,7 @@ class SystemInfo:
             arch = ''
         else:
             netfxver = 40
-            hidex86 = True if self.vs_ver <= 12.0 else False
+            hidex86 = self.vs_ver <= 12.0
             arch = self.pi.current_dir(x64=True, hidex86=hidex86)
         fx = 'WinSDK-NetFx%dTools%s' % (netfxver, arch.replace('\\', '-'))
 
@@ -1256,7 +1256,7 @@ class EnvironmentInfo:
         si = self.si
         tools = [join(si.VCInstallDir, 'VCPackages')]
 
-        forcex86 = True if self.vs_ver <= 10.0 else False
+        forcex86 = self.vs_ver <= 10.0
         arch_subdir = self.pi.cross_dir(forcex86)
         if arch_subdir:
             tools += [join(si.VCInstallDir, 'Bin%s' % arch_subdir)]
